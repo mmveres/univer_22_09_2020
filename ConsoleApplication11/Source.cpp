@@ -8,10 +8,9 @@ void bubblesort(Note*  notes, int& count)
 		for (size_t j = 0; j < count - 1 - i; j++)
 		{
 			if (strcmp(notes[j].fio, notes[j + 1].fio) > 0) {
-				char temp[50];
-				strcpy_s(temp, notes[j].fio);
-				strcpy_s(notes[j].fio, notes[j + 1].fio);
-				strcpy_s(notes[j + 1].fio, temp);
+				Note temp = notes[j];				
+				notes[j]=notes[j + 1];
+				notes[j + 1]=temp;
 			}
 		}
 	}
@@ -33,7 +32,7 @@ int mystrcmp(char* str1, char* str2) {
 void fillNoteVasya1(Note &vasya)
 {
 	strcpy_s(vasya.fio, "Vasil1");
-	strcpy_s(vasya.phone, "1234567");
+	strcpy_s(vasya.phone, "1");
 	vasya.birthday[0] = 31;
 	vasya.birthday[1] = 12;
 	vasya.birthday[2] = 2000;
@@ -41,7 +40,7 @@ void fillNoteVasya1(Note &vasya)
 void fillNoteVasya2(Note &vasya)
 {
 	strcpy_s(vasya.fio, "Vasil22");
-	strcpy_s(vasya.phone, "1234567");
+	strcpy_s(vasya.phone, "22");
 	vasya.birthday[0] = 31;
 	vasya.birthday[1] = 12;
 	vasya.birthday[2] = 2000;
@@ -49,7 +48,7 @@ void fillNoteVasya2(Note &vasya)
 void fillNoteVasya3(Note &vasya)
 {
 	strcpy_s(vasya.fio, "Vasil3");
-	strcpy_s(vasya.phone, "1234567");
+	strcpy_s(vasya.phone, "3");
 	vasya.birthday[0] = 31;
 	vasya.birthday[1] = 12;
 	vasya.birthday[2] = 2000;
